@@ -8,10 +8,10 @@ import bstreeInterface.BinarySearchTree;
 
 //Clase genérica que implementa un Árbol Binario de Búsqueda 
 public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
-	class Node {     // Clase interna para representar cada nodo del árbol
-        public E data; //dato almacenado
-        public Node left; //hijo izquierdo
-        public Node rigth; //hijo derecho
+    public class Node {
+        public E data;
+        public Node left;
+        public Node rigth;
 
         public Node(E data) {
             this(data, null, null);
@@ -23,12 +23,11 @@ public class LinkedBST<E extends Comparable<E>> implements BinarySearchTree<E> {
             this.rigth = rigth;
         }
     }
-	
-	private Node root; // raíz del árbol
-	
-	public LinkedBST() {
-		this.root = null;  // Inicialmente el árbol está vacío
-	}
+
+    protected Node root;
+    public LinkedBST() {
+        root = null;
+    }
 	
 	//metodo insert
 	public void insert(E data) throws ItemDuplicated {
